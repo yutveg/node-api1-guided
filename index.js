@@ -20,6 +20,8 @@ app.get('/', (req, res) => {
   // callback takes two args:
   // req -> object from which we can gather all details about the request
   // res -> object with useful methods (for example to respond!!)
+  // end() send() json()
+  res.json('this is the response')
 })
 
 // we need code to spin up the server and just have it listen for incoming
