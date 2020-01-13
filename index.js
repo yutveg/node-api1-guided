@@ -20,11 +20,15 @@ app.use(cors())
 app.get('/hubs', (req, res) => {
   // GET all hubs, no extra info needed (id etc)
   find()
-    .then(data => {
-      console.log(data);
+    .then(hubs => {
+      throw new Error('arghhhhh')
+      res.status(200).json(hubs)
     })
     .catch(error => {
-      console.log(error);
+      res.status(500).json({
+        message: error.message,
+        stack: error.stack,
+      })
     })
 })
 
