@@ -55,6 +55,15 @@ app.get('/hubs/:id', (req, res) => {
 app.post("/hubs", (req, res) => {
   // POST a new hub using the request body
   const newHub = req.body
+  console.log(newHub);
+  add(newHub)
+    .then(hub => {
+      res.status(201).json(hub)
+
+    })
+    .catch(error => {
+      res.status(500).json({ message: error.message })
+    })
 })
 
 app.delete("/hubs/:id", (req, res) => {
