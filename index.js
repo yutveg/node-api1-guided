@@ -90,9 +90,10 @@ app.put("/hubs/:id", async (req, res) => {
   const replacementHub = req.body
 
   try {
-
+    const result = await update(id, replacementHub)
+    console.log(result);
   } catch (error) {
-    
+    res.status(500).json(error.message)
   }
 });
 
