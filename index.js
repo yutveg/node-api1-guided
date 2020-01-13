@@ -21,7 +21,6 @@ app.get('/hubs', (req, res) => {
   // GET all hubs, no extra info needed (id etc)
   find()
     .then(hubs => {
-      throw new Error('arghhhhh')
       res.status(200).json(hubs)
     })
     .catch(error => {
