@@ -34,6 +34,16 @@ app.get('/hubs', (req, res) => {
 app.get('/hubs/:id', (req, res) => {
   // GET a hub by its id, which is a parameter of the path
   const { id } = req.params
+  findById(id)
+    .then(data => {
+      // two things can happen: id exists or not
+      // id exists: we just res.json the data
+      // id does not exist: we just res.json a 404
+    })
+    .catch(error => {
+      // crashes and such
+      // res.json the error message and stack
+    })
 })
 
 app.post("/hubs", (req, res) => {
