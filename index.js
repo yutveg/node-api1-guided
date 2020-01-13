@@ -8,3 +8,9 @@ const cors = require('cors')
 
 // instantiate an express app
 const app = express()
+
+// plug extra functionality to our app
+// we need to be able to read req.body
+app.use(express.json())
+// we need to enable CORS so this server works for all origins
+app.use(cors())
