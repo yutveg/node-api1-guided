@@ -14,3 +14,10 @@ const app = express()
 app.use(express.json())
 // we need to enable CORS so this server works for all origins
 app.use(cors())
+
+// write a dummy endpoint
+app.get('/', (req, res) => {
+  // callback takes two args:
+  // req -> object from which we can gather all details about the request
+  // res -> object with useful methods (for example to respond!!)
+})
