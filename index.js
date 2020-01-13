@@ -74,7 +74,9 @@ app.delete("/hubs/:id", (req, res) => {
       if (data) {
         res.status(202).json(`Hub with id ${data.id} got deleted`)
       } else {
-        res.status(404).json(`Hub with id ${data.id} does not exist`)
+        res.status(404).json({
+          message: `Hub with id ${data.id} does not exist`
+        })
       }
     })
     .catch(error => {
