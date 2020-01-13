@@ -39,10 +39,16 @@ app.get('/hubs/:id', (req, res) => {
       // two things can happen: id exists or not
       // id exists: we just res.json the data
       // id does not exist: we just res.json a 404
+      if (data) {
+        res.status(200).json(data)
+      } else {
+        res.status(404).json({ message: 'we can not find that hub'})
+      }
     })
     .catch(error => {
       // crashes and such
       // res.json the error message and stack
+      console.log(error);
     })
 })
 
