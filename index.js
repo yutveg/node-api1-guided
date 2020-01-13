@@ -17,8 +17,6 @@ app.use(express.json())
 // we need to enable CORS so this server works for all origins
 app.use(cors())
 
-const hubs = [{ name: 'a', id: 1 }, { name: 'b', id: 2 }]
-
 app.get('/hubs', (req, res) => {
   // GET all hubs, no extra info needed (id etc)
   find()
