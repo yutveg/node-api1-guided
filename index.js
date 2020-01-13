@@ -21,20 +21,24 @@ app.get('/hubs', (req, res) => {
 })
 
 app.get('/hubs/:id', (req, res) => {
-  // GET a hub by its id
+  // GET a hub by its id, which is a parameter of the path
   const { id } = req.params
 })
 
 app.post("/hubs", (req, res) => {
   // POST a new hub using the request body
+  const newHub = req.body
 })
 
 app.delete("/hubs/:id", (req, res) => {
   // DELETE a hub by its id
+  const { id } = req.params
 });
 
 app.put("/hubs/:id", (req, res) => {
   // PUT a hub by id using the request body
+  const { id } = req.params
+  const replacementHub = req.body
 });
 
 // write a dummy endpoint
