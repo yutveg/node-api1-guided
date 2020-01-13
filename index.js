@@ -68,7 +68,18 @@ app.post("/hubs", (req, res) => {
 app.delete("/hubs/:id", (req, res) => {
   // DELETE a hub by its id
   const { id } = req.params
-
+  
+  remove(id)
+    .then(data => {
+      if (data) {
+        res.status(202).json(`Hub with id ${data.id} got deleted`)
+      } else {
+        res.status(404).json(`Hub with id ${data.id} does not exist`)
+      }
+    })
+    .catch(error => {
+      console.log(error.message)
+    })
 });
 
 app.put("/hubs/:id", (req, res) => {
