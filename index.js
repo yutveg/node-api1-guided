@@ -7,3 +7,4 @@ const express = require('express') // commonjs equivalent to "import express fro
 const cors = require('cors')
 
 // instantiate an express app
+const app = express()
