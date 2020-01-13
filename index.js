@@ -55,11 +55,10 @@ app.get('/hubs/:id', (req, res) => {
 app.post("/hubs", (req, res) => {
   // POST a new hub using the request body
   const newHub = req.body
-  console.log(newHub);
+
   add(newHub)
     .then(hub => {
       res.status(201).json(hub)
-
     })
     .catch(error => {
       res.status(500).json({ message: error.message })
@@ -69,6 +68,7 @@ app.post("/hubs", (req, res) => {
 app.delete("/hubs/:id", (req, res) => {
   // DELETE a hub by its id
   const { id } = req.params
+
 });
 
 app.put("/hubs/:id", (req, res) => {
