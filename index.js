@@ -90,8 +90,12 @@ app.put("/hubs/:id", async (req, res) => {
   const replacementHub = req.body
 
   try {
-    const result = await update(id, replacementHub)
-    console.log(result);
+    const updatedHub = await update(id, replacementHub)
+    if (updatedHub) {
+      res.status(200).json(updatedHub)
+    } else {
+      res.status(404).json({ message: `hub with id ${id} is not here`})
+    }
   } catch (error) {
     res.status(500).json(error.message)
   }
