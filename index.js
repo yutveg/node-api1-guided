@@ -21,3 +21,8 @@ app.get('/', (req, res) => {
   // req -> object from which we can gather all details about the request
   // res -> object with useful methods (for example to respond!!)
 })
+
+// we need code to spin up the server and just have it listen for incoming
+app.listen(6000, () => {
+  console.log('listening on 6000');
+})
