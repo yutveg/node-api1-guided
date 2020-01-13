@@ -84,10 +84,13 @@ app.delete("/hubs/:id", (req, res) => {
     })
 });
 
-app.put("/hubs/:id", async (req, res) => {
+app.put("/hubs/:id/:friend/:gaga", async (req, res) => {
   // PUT a hub by id using the request body
   const { id } = req.params
   const replacementHub = req.body
+
+  // REACT
+  // axios.put('url', { name: 'new name' } )
 
   try {
     const updatedHub = await update(id, replacementHub)
